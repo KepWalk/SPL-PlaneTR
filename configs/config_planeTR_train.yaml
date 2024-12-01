@@ -1,0 +1,95 @@
+seed: 123
+resume_dir: PlaneTR_Pretrained.pt
+save_model: True
+save_log: True
+save_path: my_runs/planeTR/
+if_debug: False
+debug_interval: 150
+
+num_epochs: 50
+start_epoch: 0
+print_interval: 100
+save_step: 1
+aux_weight: 0.2
+
+solver:
+  method: adam
+  lr: 0.0001
+  weight_decay: 0.00001
+  lr_step: 12
+  gamma: 0.5
+
+dataset:
+  name: 'scannet'
+  root_dir: '../ScanNet'
+  batch_size: 48  #-----------------------------------------------
+  num_workers: 8
+  root_dir_names: []
+
+model:
+  arch: hrnet_w32
+  pretrained: True
+  fix_bn: False
+  if_predict_center: True
+  if_predict_depth: True
+  use_lines: True
+  plane_embedding_dim: 8
+  num_queries: 20
+  # important
+  loss_layer_num: 1
+  embedding_dist_threshold: 1.0
+  stride: 1
+  num_sample_pts: 2
+  dec_layers: 6
+  hrnet_w32:
+    PRETRAINED: 'ckpts/hrnetv2_w32_imagenet_pretrained.pth'
+    STAGE1:
+      NUM_MODULES: 1
+      NUM_RANCHES: 1
+      BLOCK: BOTTLENECK
+      NUM_BLOCKS:
+        - 4
+      NUM_CHANNELS:
+        - 64
+      FUSE_METHOD: SUM
+    STAGE2:
+      NUM_MODULES: 1
+      NUM_BRANCHES: 2
+      BLOCK: BASIC
+      NUM_BLOCKS:
+        - 4
+        - 4
+      NUM_CHANNELS:
+        - 32
+        - 64
+      FUSE_METHOD: SUM
+    STAGE3:
+      NUM_MODULES: 4
+      NUM_BRANCHES: 3
+      BLOCK: BASIC
+      NUM_BLOCKS:
+        - 4
+        - 4
+        - 4
+      NUM_CHANNELS:
+        - 32
+        - 64
+        - 128
+      FUSE_METHOD: SUM
+    STAGE4:
+      NUM_MODULES: 3
+      NUM_BRANCHES: 4
+      BLOCK: BASIC
+      NUM_BLOCKS:
+        - 4
+        - 4
+        - 4
+        - 4
+      NUM_CHANNELS:
+        - 32
+        - 64
+        - 128
+        - 256
+      FUSE_METHOD: SUM
+
+
