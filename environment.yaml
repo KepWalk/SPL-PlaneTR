@@ -102,4 +102,4 @@ dependencies:
       - wrapt==1.16.0
       - yapf==0.40.2
       - zipp==3.18.1
-prefix: /home/mengyan011/anaconda3/envs/SPL-PlaneTR
+prefix: anaconda3/envs/SPL-PlaneTR
