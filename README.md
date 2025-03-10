@@ -24,7 +24,7 @@ To start training, execute the following script: `train_SPLplaneTR.py`.
 
 ## Evaluation
 You can download the pre-trained model weights via this [link](https://drive.google.com/file/d/1LS1XuyUqspToj-GmwxIn6FF-SoWVW7Ny/view?usp=drive_link).
-Before starting, please set the dataset name and path in the configuration file used for validation.
+Before starting, please set the dataset name and path in the configuration file used for validation. 
 `eval_SPLplaneTR.py` script is used for ScanNet. </br>
 `eval_otherDataset.py` script is used for the other three datasets.
 
