@@ -19,14 +19,23 @@ For ScanNet, we used the same plane annotations as those employed in [PlaneTR3D]
 
 ## Training
 Before training, please download the pre-trained weights of [PlaneTR3D](https://github.com/IceTTTb/PlaneTR3D).
-Specify the dataset name and path in the configuration file and set the training parameters.</br>
-To start training, execute the following script: `train_SPLplaneTR.py`.
+Specify the dataset name and path in the configuration file and set the training parameters. To start training, execute the following script: 
+```bash
+python train_SPLplaneTR.py
+```
 
-## Evaluation
+## Evaluation on ScanNet
 You can download the pre-trained model weights via this [link](https://drive.google.com/file/d/1LS1XuyUqspToj-GmwxIn6FF-SoWVW7Ny/view?usp=drive_link).
-Before starting, please set the dataset name and path in the configuration file used for validation. </br>
-`eval_SPLplaneTR.py` script is used for ScanNet. </br>
-`eval_otherDataset.py` script is used for the other three datasets.
+Before starting, please set the dataset name and path in the configuration file used for validation.Run the following command to evaluate the performance:
+```bash
+python eval_SPLplaneTR.py
+```
+
+## Generalization Evaluation
+Evaluate the performance on the other threes datasets:
+```bash
+python eval_otherDataset.py
+```
 
 ## Acknowledgements
 This code is based on the [PlaneTR3D](https://github.com/IceTTTb/PlaneTR3D) repository. We would like to acknowledge the authors for their work and for providing the foundation upon which this project is built.
