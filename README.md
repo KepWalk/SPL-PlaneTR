@@ -11,7 +11,7 @@ Build the Pytorch environment:
 ```bash
 conda env create -f environment.yaml
 ```
-Make sure to modify the prefix field in the environment.yml file to specify your own desired virtual environment path.
+Make sure to modify the prefix field in the environment.yaml file to specify your own desired virtual environment path.
 
 ## Data Preparation
 We trained our network using ScanNet and evaluated its performance on the same dataset. Additionally, we utilized Matterport3D, ICL-NUIM, and S2D3DS datasets to validate the generalization capability of our model.
