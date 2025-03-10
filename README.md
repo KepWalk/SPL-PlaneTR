@@ -1,4 +1,4 @@
-# SPL-PlaneTR for Robust and Generalizable Indoor 
+# SPL-PlaneTR for Robust and Generalizable Indoor Plane Segmentation
 
 ## Getting Start
 
