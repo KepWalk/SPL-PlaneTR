@@ -9,7 +9,7 @@ git clone https://github.com/KepWalk/SPL-PlaneTR.git
 
 Build the Pytorch environment:
 ```bash
-conda env create -f environment.yml
+conda env create -f environment.yaml
 ```
 Make sure to modify the prefix field in the environment.yml file to specify your own desired virtual environment path.
 
