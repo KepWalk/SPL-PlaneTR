@@ -186,9 +186,9 @@ def get_lines_features(feat, pos, lines, size_ori, n_pts=21):
     return sample_feats, sample_pos  # b, c, n
 
 
-class PlaneTR_HRNet(nn.Module):
+class SPL_PlaneTR(nn.Module):
     def __init__(self, cfg, position_embedding_mode='sine'):
-        super(PlaneTR_HRNet, self).__init__()
+        super(SPL_PlaneTR, self).__init__()
         num_queries = cfg.model.num_queries
         plane_embedding_dim = cfg.model.plane_embedding_dim
         loss_layer_num = cfg.model.loss_layer_num
@@ -312,7 +312,7 @@ class PlaneTR_HRNet(nn.Module):
                                                        src_lines=lines_feat, mask_lines=mask_lines,
                                                        pos_embed_lines=lines_pos)  # memory: b, c, h, w
         else:
-            hs_all, _, memory, reference_points  = self.transformer(src, self.query_embed.weight, pos, tgt=None,
+            hs_all, _, memory, reference_points = self.transformer(src, self.query_embed.weight, pos, tgt=None,
                                                        src_lines=None, mask_lines=None,
                                                        pos_embed_lines=None)  # memory: b, c, h, w
         reference_before_sigmoid = inverse_sigmoid(reference_points)

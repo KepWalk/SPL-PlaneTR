@@ -17,7 +17,7 @@ import torchvision.transforms as tf
 
 from utils.utils import Set_Config, Set_Logger, Set_Ckpt_Code_Debug_Dir
 
-from models.planeTR_HRNet import PlaneTR_HRNet as PlaneTR
+from models.SPL_PlaneTR import SPL_PlaneTR as SPL_PlaneTR
 from models.ScanNetV1_PlaneDataset import scannetv1_PlaneDataset
 
 from utils.misc import AverageMeter, get_optimizer, get_coordinate_map
@@ -118,7 +118,7 @@ def train(cfg, logger):
     checkpoint_dir = "./weights"
 
     # build network
-    network = PlaneTR(cfg)
+    network = SPL_PlaneTR(cfg)
 
     if NUM_GPUS >= 2:
         print("Let's use", torch.cuda.device_count(), "GPUs!")
@@ -147,8 +147,8 @@ def train(cfg, logger):
 
     # set up optimizers
     optimizer = get_optimizer(network.parameters(), cfg.solver)
-    lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, cfg.solver.lr_step, gamma=cfg.solver.gamma)
-    # lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=cfg.num_epochs, eta_min=0)
+    # lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, cfg.solver.lr_step, gamma=cfg.solver.gamma)
+    lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=cfg.num_epochs, eta_min=0)
     for _ in range(cfg.start_epoch):
         optimizer.zero_grad()
         optimizer.step()

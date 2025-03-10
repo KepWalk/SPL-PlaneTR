@@ -15,7 +15,7 @@ from models.S2D3DSDataset import S2d3dsDataset, ToTensor
 from utils.utils import Set_Config, Set_Logger
 from torch.utils.data import DataLoader
 
-from models.planeTR_HRNet import PlaneTR_HRNet as PlaneTR
+from models.SPL_PlaneTR import SPL_PlaneTR as SPL_PlaneTR
 from models.ScanNetV1_PlaneDataset import scannetv1_PlaneDataset
 
 from utils.misc import get_coordinate_map
@@ -104,7 +104,7 @@ def eval(cfg, logger):
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     # build network
-    network = PlaneTR(cfg)
+    network = SPL_PlaneTR(cfg)
 
     # load nets into gpu
     network = network.to(device)

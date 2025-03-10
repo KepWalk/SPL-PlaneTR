@@ -18,7 +18,7 @@ from torchvision.transforms import transforms
 
 from utils.utils import Set_Config, Set_Logger, Set_Ckpt_Code_Debug_Dir
 
-from models.planeTR_HRNet import PlaneTR_HRNet as PlaneTR
+from models.SPL_PlaneTR import SPL_PlaneTR as SPL_PlaneTR
 from models.ScanNetV1_PlaneDataset import scannetv1_PlaneDataset
 from models.Mp3dDataset import Mp3dDataset, ToTensor
 from models.S2D3DSDataset import S2d3dsDataset, ToTensor
@@ -126,7 +126,7 @@ def eval(cfg, logger):
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     # build network
-    network = PlaneTR(cfg)
+    network = SPL_PlaneTR(cfg)
 
     # load nets into gpu
     network = network.to(device)

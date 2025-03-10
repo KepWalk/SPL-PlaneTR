@@ -1,5 +1,5 @@
 seed: 123
-resume_dir: best.pt
+resume_dir: Pretrained.pt
 
 save_log: False
 save_path: results/
