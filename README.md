@@ -24,7 +24,7 @@ python train_SPLplaneTR.py
 ```
 
 ## Evaluation on ScanNet
-You can download the pre-trained model weights via this [link](https://drive.google.com/file/d/1LS1XuyUqspToj-GmwxIn6FF-SoWVW7Ny/view?usp=drive_link).
+You can download the pre-trained model weights via this [link](https://pan.baidu.com/s/1lCwTUQDcFa_U3vTCEcFerg?pwd=za6u).
 Before starting, please set the dataset name and path in the configuration file used for validation.Run the following command to evaluate the performance:
 ```bash
 python eval_SPLplaneTR.py
