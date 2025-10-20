@@ -1,4 +1,4 @@
-# SPL-PlaneTR for Robust and Generalizable Indoor Plane Segmentation
+# SPL-PlaneTR: Lightweight and Generalizable Indoor Plane Segmentation Based on Prompt Learning
 
 ## Getting Start
 
