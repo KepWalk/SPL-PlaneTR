@@ -38,3 +38,7 @@ python eval_otherDataset.py
 
 ## Acknowledgements
 This code is based on the [PlaneTR3D](https://github.com/IceTTTb/PlaneTR3D) repository. We would like to acknowledge the authors for their work and for providing the foundation upon which this project is built.
+
+## Citation
+If you find our work useful for your research, please consider citing our paper：
+Deng, Z., Ge, Y., Qi, X., Sun, K., Wan, R., Zhang, B., Zhang, S., Zhang, X., Meng, Y., 2025. SPL-PlaneTR: Lightweight and Generalizable Indoor Plane Segmentation Based on Prompt Learning. Sensors 25(9), 2797.
